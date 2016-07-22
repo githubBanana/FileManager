@@ -21,11 +21,17 @@ public class MainPresenter extends BasePresenter<MainCallback> {
         attachView(mainCallback);
     }
 
-    public void onClickNightMode() {
+    public void changeThemeMode(boolean isNight) {
         mvpView.showToast("toast");
-        SharePreferUtil.putBoolean(mContext, Constant.ISNAGHT,true);
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        mvpView.recreate();
+        boolean _night = isNight;
+        int _mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+        if (_night)
+            _mode = AppCompatDelegate.MODE_NIGHT_YES;
+        else
+            _mode = AppCompatDelegate.MODE_NIGHT_NO;
+        SharePreferUtil.putBoolean(mContext, Constant.ISNAGHT,_night);
+        AppCompatDelegate.setDefaultNightMode(_mode);
+        mvpView.recreateView();
     }
 
 

@@ -1,7 +1,4 @@
-package com.xs.filemanager.mvp.ui;
-
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+package com.xs.filemanager.mvp.ui.activity;
 
 import com.xs.filemanager.R;
 import com.xs.filemanager.mvp.ui.base.ToolbarActivity;
@@ -13,17 +10,22 @@ import com.xs.filemanager.mvp.ui.base.ToolbarActivity;
  * @email Xs.lin@foxmail.com
  */
 public class TestActivity extends ToolbarActivity {
-    private static final String TAG = "TestActivity";
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+    protected int getContentViewId() {
+        return R.layout.activity_test;
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.app_name);
     }
 }

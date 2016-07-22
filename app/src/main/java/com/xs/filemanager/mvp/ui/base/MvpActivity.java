@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import com.xs.filemanager.mvp.presenter.base.BasePresenter;
 
 /**
- * @version V1.0 <描述当前版本功能>
+ * @version V1.0 <MvpActivity>
  * @author: Xs
  * @date: 2016-07-21 11:35
  * @email Xs.lin@foxmail.com
@@ -18,6 +18,7 @@ public abstract class MvpActivity<P extends BasePresenter> extends ToolbarActivi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         mPresenter = createPresenter();
     }
 

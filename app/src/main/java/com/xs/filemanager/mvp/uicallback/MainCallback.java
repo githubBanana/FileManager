@@ -17,7 +17,7 @@ public interface MainCallback {
 
     void dismissProgress();
 
-    void recreate();
+    void recreateView();
 
 
 }
